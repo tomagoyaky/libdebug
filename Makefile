@@ -1,11 +1,13 @@
 
-
 all: test test32
 
-test:
-		gcc -o test test.c debug.c 
+
+SRCS=src/test.c src/debug.c
 
 
-test32:
-		gcc -m32 -o test32 test.c debug.c 
+test: $(SRCS)
+		gcc -o test $(SRCS)
+
+test32: $(SRCS)
+		gcc -m32 -o test32 $(SRCS)
 
